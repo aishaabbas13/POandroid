@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/Pantry_Name_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pantry Name Here" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="15">
+
+        <SearchView
+            android:id="@+id/Pantry_Item_Search_View"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="11"
+            android:outlineProvider="none">
+
+        </SearchView>
+
+        <Button
+            android:id="@+id/Add_Pantry_Item_BTN"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="@string/Add_Pantry_Item_Button" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

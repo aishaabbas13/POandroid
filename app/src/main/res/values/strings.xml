@@ -7,4 +7,5 @@
     <string name="group_table">https://vpantryweb.herokuapp.com/grouptable</string>
     <string name="items">https://vpantryweb.herokuapp.com/items</string>
     <string name="post_jwt">https://vpantryweb.herokuapp.com/postjwt</string>
+    <string name="Add_Pantry_Item_Button">Add Item</string>
 </resources>
