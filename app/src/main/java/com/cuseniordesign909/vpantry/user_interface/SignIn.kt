@@ -9,7 +9,6 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.cuseniordesign909.vpantry.R
-import com.cuseniordesign909.vpantry.user_interface.import.SignUp
 
 class SignIn : Fragment(), View.OnClickListener {
     private var signIn : View? = null

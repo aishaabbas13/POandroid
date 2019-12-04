@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">vPantry</string>
-    <string name="backend_url">https://vpantry.herokuapp.com/</string>
-    <string name="sign_up">https://vpantry.herokuapp.com/signup</string>
-    <string name="sign_in">https://vpantry.herokuapp.com/signin</string>
-    <string name="user">https://vpantry.herokuapp.com/user</string>
-    <string name="group_table">https://vpantry.herokuapp.com/grouptable</string>
-    <string name="items">https://vpantry.herokuapp.com/items</string>
-    <string name="post_jwt">https://vpantry.herokuapp.com/postjwt</string>
+    <string name="backend_url">https://vpantryweb.herokuapp.com/</string>
+    <string name="sign_up">https://vpantryweb.herokuapp.com/signup</string>
+    <string name="sign_in">https://vpantryweb.herokuapp.com/signin</string>
+    <string name="user">https://vpantryweb.herokuapp.com/user</string>
+    <string name="group_table">https://vpantryweb.herokuapp.com/grouptable</string>
+    <string name="items">https://vpantryweb.herokuapp.com/items</string>
+    <string name="post_jwt">https://vpantryweb.herokuapp.com/postjwt</string>
 </resources>
