@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="First Name"
+        android:text="@string/fname_head"
         android:textColor="#000000" />
 
     <EditText
@@ -17,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/fname_hint"
         android:inputType="textPersonName"
         android:text="Craig" />
 
@@ -31,12 +33,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/lname_hint"
         android:inputType="textPersonName"
-        android:text="Mack"/>
+        android:text="Mack" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="@string/email_head"
         android:textColor="#000000" />
     <EditText
         android:id="@+id/signUpEmail"
@@ -45,35 +49,41 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:text="androiduser@gmail.com"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Password"
+        android:text="@string/password_head"
         android:textColor="#000000" />
+
     <EditText
         android:id="@+id/signUpPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/password_hint"
         android:inputType="textPassword"
-        android:text="craigmack1994"/>
+        tools:text="craigmack1994" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Re-enter Password"
+        android:text="@string/confpassword_head"
         android:textColor="#000000" />
+
     <EditText
         android:id="@+id/passwordCheck"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/password_hint"
         android:inputType="textPassword"
-        android:text="craigmack1994"/>
+        android:text="craigmack1994" />
 
     <Button
         android:id="@+id/signUpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:textAllCaps="false"/>
+        android:text="@string/text_signup"
+        android:textAllCaps="false" />
 </LinearLayout>

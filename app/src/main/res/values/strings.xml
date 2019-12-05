@@ -1,5 +1,20 @@
 <resources>
     <string name="app_name">vPantry</string>
+    <!--Headers-->
+    <string name="fname_head">First Name</string>
+    <string name="lname_head">Last Name</string>
+    <string name="email_head">Email</string>
+    <string name="password_head">Password</string>
+    <string name="confpassword_head">Confirm Password</string>
+    <string name="text_signup">Sign Up</string>
+
+    <!--Hints-->
+    <string name="fname_hint">Craig</string>
+    <string name="lname_hint">Mack</string>
+    <string name="email_hint">androiduser@gmail.com</string>
+    <string name="password_hint">Password</string>
+
+
     <string name="backend_url">https://vpantryweb.herokuapp.com/</string>
     <string name="sign_up">https://vpantryweb.herokuapp.com/signup</string>
     <string name="sign_in">https://vpantryweb.herokuapp.com/signin</string>
