@@ -7,4 +7,7 @@
     <string name="group_table">https://vpantry.herokuapp.com/grouptable</string>
     <string name="items">https://vpantry.herokuapp.com/items</string>
     <string name="post_jwt">https://vpantry.herokuapp.com/postjwt</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
