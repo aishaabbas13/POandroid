@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -18,14 +17,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/fname_hint"
+        android:hint="@string/hint_fname"
         android:inputType="textPersonName"
         android:text="Craig" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Last Name"
+        android:text="@string/lname_head"
         android:textColor="#000000" />
 
     <EditText
@@ -33,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/lname_hint"
+        android:hint="@string/hint_lname"
         android:inputType="textPersonName"
         android:text="Mack" />
 
@@ -42,13 +41,15 @@
         android:layout_height="wrap_content"
         android:text="@string/email_head"
         android:textColor="#000000" />
+
     <EditText
         android:id="@+id/signUpEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/hint_email"
         android:inputType="textEmailAddress"
-        android:text="androiduser@gmail.com"/>
+        android:text="androiduser@gmail.com" />
 
     <TextView
         android:layout_width="match_parent"
@@ -61,14 +62,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/password_hint"
+        android:hint="@string/hint_password"
         android:inputType="textPassword"
-        tools:text="craigmack1994" />
+        android:text="androiduser12" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/confpassword_head"
+        android:text="@string/passconf_head"
         android:textColor="#000000" />
 
     <EditText
@@ -76,14 +77,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/password_hint"
+        android:hint="@string/hint_password"
         android:inputType="textPassword"
-        android:text="craigmack1994" />
+        android:text="androiduser12" />
 
     <Button
         android:id="@+id/signUpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_signup"
+        android:hint="@string/butt_signup"
+        android:text="Sign Up"
         android:textAllCaps="false" />
 </LinearLayout>

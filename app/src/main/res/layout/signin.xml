@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="@string/hint_email"
         android:textColor="#000000" />
     <EditText
         android:id="@+id/signUpEmail"
@@ -24,10 +24,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textEmailAddress"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Password"
+        android:text="@string/hint_password"
         android:textColor="#000000" />
     <EditText
         android:id="@+id/signUpPassword"
@@ -35,12 +36,13 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"/>
+
     <Button
         android:id="@+id/signInButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign In"
-        android:textAllCaps="false"/>
+        android:text="@string/butt_signin"
+        android:textAllCaps="false" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,19 +55,20 @@
             android:textColor="#000000"
             android:layout_gravity="right"
             android:layout_weight="1"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't have an account? "
-            android:textColor="#000000"
-            android:layout_gravity="right"/>
+            android:layout_gravity="right"
+            android:text="@string/no_account"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/createAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create One"
-            android:textColor="#2155F3"
-            android:layout_gravity="right"/>
+            android:layout_gravity="right"
+            android:text="@string/signin_signup_link"
+            android:textColor="#2155F3" />
     </LinearLayout>
 </LinearLayout>

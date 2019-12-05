@@ -1,5 +1,7 @@
 package com.cuseniordesign909.vpantry.user_interface
 
+    .import
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +17,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,7 +31,11 @@ class SignUp() : Fragment(), View.OnClickListener {
     private var signUpPassword : EditText? = null
     private var passwordCheck : EditText? = null
     private var signUpButton: Button? = null
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         signUp = super.onCreateView(inflater, container, savedInstanceState)
         signUp = inflater.inflate(R.layout.signup, container, false)
         signUpFirstName = signUp?.findViewById(R.id.signUpFirstName)
@@ -43,7 +48,6 @@ class SignUp() : Fragment(), View.OnClickListener {
         signUpButton?.setOnClickListener(this)
         return signUp
     }
-
     override fun onClick(v: View?) {
         var credentials = SignUpCredentials(signUpFirstName?.text.toString(),
             signUpLastName?.text.toString(),
@@ -64,11 +68,13 @@ class SignUp() : Fragment(), View.OnClickListener {
         var api = retrofit.create(NetworkConnection::class.java)
         var call = api.signUp(credentials)
         call.enqueue(object : Callback<SignUpStatus>{
-            override fun onResponse(call: Call<SignUpCredentials>, response: Response<SignUpStatus>){
-                if(response.code() == 200){
-                    var success : SignUpStatus = response.body()!!
-                    println(success)
-                }
+            override fun onResponse(call: Call<SignUpStatus>, response: Response<SignUpStatus>) {
+                println(call.toString())
+                val success = response.raw()
+                println("onResponse was called: $success")
+            }
+            override fun onFailure(call: Call<SignUpStatus>, t: Throwable) {
+                println("onFailure was called: $t.message")
             }
         })
     }

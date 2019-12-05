@@ -1,26 +1,32 @@
 <resources>
-    <string name="app_name">vPantry</string>
     <!--Headers-->
     <string name="fname_head">First Name</string>
     <string name="lname_head">Last Name</string>
     <string name="email_head">Email</string>
     <string name="password_head">Password</string>
-    <string name="confpassword_head">Confirm Password</string>
-    <string name="text_signup">Sign Up</string>
+    <string name="passconf_head">Confirm Password</string>
 
-    <!--Hints-->
-    <string name="fname_hint">Craig</string>
-    <string name="lname_hint">Mack</string>
-    <string name="email_hint">androiduser@gmail.com</string>
-    <string name="password_hint">Password</string>
+    <!--Hint text-->
+    <string name="hint_fname">Harry</string>
+    <string name="hint_lname">Dresden</string>
+    <string name="hint_email">user@email.com</string>
+    <string name="hint_password">Password</string>
 
+    <!--Buttons-->
+    <string name="butt_signup">Sign Up</string>
+    <string name="butt_signin">Sign In</string>
 
-    <string name="backend_url">https://vpantryweb.herokuapp.com/</string>
-    <string name="sign_up">https://vpantryweb.herokuapp.com/signup</string>
-    <string name="sign_in">https://vpantryweb.herokuapp.com/signin</string>
-    <string name="user">https://vpantryweb.herokuapp.com/user</string>
-    <string name="group_table">https://vpantryweb.herokuapp.com/grouptable</string>
-    <string name="items">https://vpantryweb.herokuapp.com/items</string>
-    <string name="post_jwt">https://vpantryweb.herokuapp.com/postjwt</string>
-    <string name="Add_Pantry_Item_Button">Add Item</string>
+    <!--Misc.-->
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="signin_signup_link">Create one!</string>
+
+    <string name="app_name">vPantry</string>
+    <string name="backend_url">https://vpantry.herokuapp.com/</string>
+    <string name="sign_up">https://vpantry.herokuapp.com/signup</string>
+    <string name="sign_in">https://vpantry.herokuapp.com/signin</string>
+    <string name="user">https://vpantry.herokuapp.com/user</string>
+    <string name="group_table">https://vpantry.herokuapp.com/grouptable</string>
+    <string name="items">https://vpantry.herokuapp.com/items</string>
+    <string name="post_jwt">https://vpantry.herokuapp.com/postjwt</string>
+    <string name="Add_Pantry_Item_Button">Add Item!</string>
 </resources>
