@@ -7,7 +7,13 @@
     <string name="group_table">https://vpantry.herokuapp.com/grouptable</string>
     <string name="items">https://vpantry.herokuapp.com/items</string>
     <string name="post_jwt">https://vpantry.herokuapp.com/postjwt</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_item_header">Add Item To Pantry</string>
+    <string name="item_name_prompt">Name:</string>
+    <string name="item_name_example">Ex: Oreos</string>
+    <string name="item_location_prompt">Location:</string>
+    <string name="item_location_example">Ex: Corner Cabinet</string>
+    <string name="item_quantity_prompt">Quantity:</string>
+    <string name="item_quantity_example">Ex: 7</string>
+    <string name="add_item_submit_button_text">Add</string>
+    <string name="add_item_cancel_button_text">Cancel</string>
 </resources>
