@@ -10,10 +10,25 @@
         android:supportsRtl="true"
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/AppTheme">
-        <activity android:name="com.cuseniordesign909.vpantry.MainActivity">
+        <activity android:name=".Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".SignedOutActivity">
+            <intent-filter>
+                <action android:name="signedoutactivity"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".PantriesSignedInActivity">
+            <intent-filter>
+                <action android:name="pantriessignedinactivity"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ItemsSignedInActivity">
+            <intent-filter>
+                <action android:name="itemssignedinactivity"/>
             </intent-filter>
         </activity>
     </application>

@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
     android:background="#FFFFFF">
     <ScrollView
         android:layout_width="match_parent"
@@ -13,12 +12,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="20dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="First Name"
+                android:text="First Name (Required)"
                 android:textColor="#000000" />
 
             <EditText
@@ -26,8 +26,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Craig" />
+                android:inputType="textPersonName"/>
+            <TextView
+                android:id="@+id/firstNameError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_light"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -40,49 +44,67 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Mack"/>
+                android:inputType="textPersonName"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Email"
+                android:text="Email (Required)"
                 android:textColor="#000000" />
             <EditText
                 android:id="@+id/signUpEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textEmailAddress"
-                android:text="androiduser@gmail.com"/>
+                android:inputType="textEmailAddress"/>
             <TextView
-                android:id="@+id/errorMessage"
+                android:id="@+id/emailError"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/holo_red_light"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Password"
+                android:text="Nick Name"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/signUpNickName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password (Required)"
                 android:textColor="#000000" />
             <EditText
                 android:id="@+id/signUpPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPassword"
-                android:text="androiduser12"/>
+                android:inputType="textPassword"/>
+            <TextView
+                android:id="@+id/passwordError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_light"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Re-enter Password"
+                android:text="Re-enter Password (Required)"
                 android:textColor="#000000" />
             <EditText
                 android:id="@+id/passwordCheck"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPassword"
-                android:text="androiduser12"/>
+                android:inputType="textPassword"/>
+            <TextView
+                android:id="@+id/checkError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_light"/>
 
             <Button
                 android:id="@+id/signUpButton"

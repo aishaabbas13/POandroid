@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
     android:background="#FFFFFF">
     <ScrollView
         android:layout_width="match_parent"
@@ -12,14 +11,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="20dp">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/signInLogo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/vpantry_logo" />
 
+            <TextView
+                android:id="@+id/signInError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_light"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,11 +53,6 @@
                 android:layout_height="wrap_content"
                 android:text="Sign In"
                 android:textAllCaps="false"/>
-            <TextView
-                android:id="@+id/signInError"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/holo_red_light"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                     android:id="@+id/createAccount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Create One"
+                    android:text="Create one"
                     android:textColor="#2155F3"
                     android:layout_gravity="right"/>
             </LinearLayout>

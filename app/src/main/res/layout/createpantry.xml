@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pantry Name (Required)"
+                android:textColor="#000000" />
+            <EditText
+                android:id="@+id/createPantryName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"/>
+            <TextView
+                android:id="@+id/pantryNameError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_light"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Administrators\nBy default, you are one."
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:textColor="#000000" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/createPantryAdmins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:layout_marginTop="20dp"
+                android:id="@+id/createPantryAddAdministrator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Administrator"
+                android:textAllCaps="false"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Users"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/createPantryUsers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:layout_marginTop="20dp"
+                android:id="@+id/createPantryAddUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add User"
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/createPantryButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create Pantry"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
