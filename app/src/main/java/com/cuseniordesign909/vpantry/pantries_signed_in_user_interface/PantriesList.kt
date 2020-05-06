@@ -103,6 +103,10 @@ class PantriesList : Fragment(){
                 activity?.finish()
                 true
             }
+            R.id.delete_all_data -> {
+                activity!!.supportFragmentManager.beginTransaction().add(R.id.signedInFragmentManager, DeleteDataOnServer(), "DeleteDataOnServer").addToBackStack("DeleteDataOnServer").commit()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

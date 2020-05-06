@@ -82,8 +82,8 @@ class CreatePantry : Fragment(), View.OnClickListener {
             DividerItemDecorator(
                 ContextCompat.getDrawable(context as Context, R.drawable.divider) as Drawable
             )
-        createPantryAdmins?.adapter = EmailListAdapter(adminEmails, "Edit Administrator", this)
-        createPantryUsers?.adapter = EmailListAdapter(userEmails, "Edit User", this)
+        createPantryAdmins?.adapter = EmailListAdapter(adminEmails, "Edit Administrator", this, null)
+        createPantryUsers?.adapter = EmailListAdapter(userEmails, "Edit User", this, null)
         createPantryAdmins?.layoutManager = LinearLayoutManager(activity)
         createPantryUsers?.layoutManager = LinearLayoutManager(activity)
         createPantryUsers?.isNestedScrollingEnabled = false
@@ -125,6 +125,7 @@ class CreatePantry : Fragment(), View.OnClickListener {
             menu?.findItem(R.id.app_bar_create_pantry).isVisible = false
             menu?.findItem(R.id.app_bar_sign_out).isVisible = false
             menu?.findItem(R.id.app_bar_user_info).isVisible = false
+            menu?.findItem(R.id.delete_all_data).isVisible = false
         } else {
             menu?.findItem(R.id.app_bar_pantry_info).isVisible = false
             menu?.findItem(R.id.app_bar_add_item).isVisible = false

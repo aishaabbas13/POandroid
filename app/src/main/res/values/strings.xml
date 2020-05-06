@@ -2,6 +2,6 @@
     <string name="app_name">vPantry</string>
     <string name="token">token</string>
     <string name="preferences_file">com.cuseniordesign909.vpantry.prefs</string>
-    <string name="backend_url">https://vpantryapi.herokuapp.com/</string>
+    <string name="backend_url">http://vpantryapi.herokuapp.com/</string>
     <string name="signed_out">Signed out.</string>
 </resources>

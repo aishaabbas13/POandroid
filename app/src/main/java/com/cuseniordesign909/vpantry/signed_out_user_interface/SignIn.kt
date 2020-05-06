@@ -49,16 +49,13 @@ class SignIn : Fragment(), View.OnClickListener {
     private fun connect(credentials : SignUpandSignInCredentials){
         var api = SignedOutActivity.retrofit?.create(NetworkConnection::class.java)
         var call = api?.signIn(credentials)
-        println("running")
         call?.enqueue(object : Callback<ResponseStatus> {
             override fun onResponse(
                 call: Call<ResponseStatus>,
                 response: Response<ResponseStatus>
             ) {
-                println("connection")
                 var signInStatus: ResponseStatus? = response.body()
                 if (signInStatus?.success == true) {
-                    println("success")
                     val editor = SignedOutActivity.preferences!!.edit()
                     editor.putString(getString(R.string.token), signInStatus?.token)
                     editor.apply()
@@ -67,7 +64,6 @@ class SignIn : Fragment(), View.OnClickListener {
                     activity?.finish()
                     startActivity(intent)
                 } else {
-                    println("failed")
                     signInError?.text = signInStatus?.message
                     signInError?.visibility = View.VISIBLE
                 }

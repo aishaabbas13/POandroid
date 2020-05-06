@@ -30,6 +30,7 @@ class ChangePassword : DialogFragment(), View.OnClickListener, DialogInterface.O
     private var newPasswordError : TextView? = null
     private var newPasswordCheck : EditText? = null
     private var newPasswordCheckError : TextView? = null
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         changePassword = activity?.layoutInflater?.inflate(R.layout.changepassword, null)
         initViews()

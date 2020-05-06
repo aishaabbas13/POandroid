@@ -93,13 +93,19 @@ class PantryInfo : Fragment(), View.OnClickListener {
     }
     override fun onClick(view: View?) {
         when(view?.id){
-            R.id.pantryInfoEdit -> {
+            //Replace code so that it loads UpdatePantryInfo fragment instead
+            //TODO: implement UpdatePantryInfo fragment
+            /*R.id.pantryInfoEdit -> {
                 var b = Bundle()
+                b?.putBoolean("create", false)
+                b?.putString("name", pantry?.name)
+                b?.putStringArrayList("users", pantry?.users)
+                b?.putStringArrayList("administrators", pantry?.administrators)
                 b?.putString("_id", pantry?._id)
-                var editPantry = UpdatePantryInfo()
+                var editPantry = CreatePantry()
                 editPantry?.arguments = b
                 activity?.supportFragmentManager?.beginTransaction()?.add(R.id.signedInFragmentManager, editPantry, "Edit Pantry")?.addToBackStack("Edit Pantry")?.commit()
-            }
+            }*/
         }
     }
 
