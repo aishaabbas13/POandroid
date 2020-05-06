@@ -9,13 +9,15 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cuseniordesign909.vpantry.R
 import com.cuseniordesign909.vpantry.data_representations.EmailListData
+import com.cuseniordesign909.vpantry.items_signed_in_user_interface.AddUsersAdmins
 import kotlinx.android.synthetic.main.emailitem.view.*
 
-class EmailListAdapter(private var emails : ArrayList<EmailListData>?, _mode : String?, _fragment : CreatePantry?) : RecyclerView.Adapter<EmailListAdapter.EmailHolder>(){
+class EmailListAdapter(private var emails : ArrayList<EmailListData>?, _mode : String?, _fragment : CreatePantry?, _fragment2:AddUsersAdmins?) : RecyclerView.Adapter<EmailListAdapter.EmailHolder>(){
     var mode = _mode
     var fragment = _fragment
+    var fragment2 = _fragment2
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmailHolder {
-        return EmailHolder(LayoutInflater.from(parent.context).inflate(R.layout.emailitem, parent, false), this, mode, fragment)
+        return EmailHolder(LayoutInflater.from(parent.context).inflate(R.layout.emailitem, parent, false), this, mode, fragment, fragment2)
     }
     override fun onBindViewHolder(holder: EmailHolder, position: Int) {
         holder.emailListEmail.text = emails!![position].email
@@ -29,8 +31,9 @@ class EmailListAdapter(private var emails : ArrayList<EmailListData>?, _mode : S
             holder.userDoesNotExistError.visibility = View.GONE
         }
     }
-    class EmailHolder(view : View, _adapter:EmailListAdapter, _mode : String?, _fragment : CreatePantry?) : RecyclerView.ViewHolder(view), View.OnClickListener {
+    class EmailHolder(view : View, _adapter:EmailListAdapter, _mode : String?, _fragment : CreatePantry?, _fragment2:AddUsersAdmins?) : RecyclerView.ViewHolder(view), View.OnClickListener {
         var fragment = _fragment
+        var fragment2 = _fragment2
         var adapter = _adapter
         var mode = _mode
         var emailListEmail = view.emailListEmail as TextView
@@ -45,10 +48,16 @@ class EmailListAdapter(private var emails : ArrayList<EmailListData>?, _mode : S
             var editEmail = AddUserorAdmin()
             if(mode == "Edit User") {
                 b.putString("description", "Users can add, remove items or edit items.")
-                editEmail.setTargetFragment(fragment, fragment?.EDIT_USER as Int)
+                if(fragment != null)
+                    editEmail.setTargetFragment(fragment, fragment?.EDIT_USER as Int)
+                if(fragment2 != null)
+                    editEmail.setTargetFragment(fragment2, fragment2?.EDIT_USER as Int)
             } else if(mode == "Edit Administrator"){
                 b.putString("description", "Administrators can add or remove users as well as other administrators and can add, remove items or edit items.")
-                editEmail.setTargetFragment(fragment, fragment?.EDIT_ADMIN as Int)
+                if(fragment != null)
+                    editEmail.setTargetFragment(fragment, fragment?.EDIT_ADMIN as Int)
+                if(fragment2 != null)
+                    editEmail.setTargetFragment(fragment2, fragment2?.EDIT_ADMIN as Int)
             }
             b.putInt("index", adapterPosition)
             b.putString("email", adapter?.emails?.get(adapterPosition)?.email)
