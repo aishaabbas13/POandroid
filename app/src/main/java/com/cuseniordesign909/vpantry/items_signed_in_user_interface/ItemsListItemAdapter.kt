@@ -35,27 +35,17 @@ class ItemsListItemAdapter(_fragment : ItemsList, val items: ArrayList<Item>?) :
     class ItemHolder(v: View, _adapter : ItemsListItemAdapter, _fragment:ItemsList) : RecyclerView.ViewHolder(v), View.OnClickListener {
         var adapter = _adapter
         var fragment = _fragment
-        var itemOwner = v.itemOwner
         val itemName = v.itemName
-        var itemType = v.itemType
-        var itemQuantity = v.itemQuantity
-        var itemExpirationDate = v.itemExpirationDate
-        var itemNote = v.itemNote
         init {
             v.setOnClickListener(this)
         }
         fun bind(item: Item?){
-            itemOwner.text = item?.owner
             itemName.text = item?.name
-            itemType.text = item?.type
-            itemQuantity.text = item?.quantity
-            itemExpirationDate.text = SimpleDateFormat("MM/dd/yyyy").format(item?.expirationDate)
-            itemNote.text = item?.note
         }
         //4
         override fun onClick(v: View) {
             var item = adapter?.items?.get(adapterPosition)
-            var addItem = AddItem()
+            var addItem = ItemDetails()
             var bundle = Bundle()
             bundle?.putString("pantryName", fragment.name)
             bundle?.putString("_id", fragment._id)

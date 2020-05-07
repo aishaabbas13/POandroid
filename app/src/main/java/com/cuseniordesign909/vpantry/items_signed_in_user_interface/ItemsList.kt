@@ -1,10 +1,12 @@
 package com.cuseniordesign909.vpantry.items_signed_in_user_interface
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -54,8 +56,25 @@ class ItemsList : Fragment(){
         listOfItems?.layoutManager = layout
         val swipeHandler1 = object : SwipeToDeleteCallback(activity?.applicationContext as Context) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val adapter = listOfItems?.adapter as ItemsListItemAdapter
-                adapter.removeAt(viewHolder.adapterPosition)
+                var alertDialog = AlertDialog.Builder(context as Context)
+                alertDialog.setTitle("Delete item?")
+                alertDialog.setMessage("Are you sure you want to delete this item? This action cannot be undone.")
+                alertDialog.setCancelable(false)
+                alertDialog.setPositiveButton("Delete", object : DialogInterface.OnClickListener{
+                    override fun onClick(v: DialogInterface?, p1: Int) {
+                        val adapter = listOfItems?.adapter as ItemsListItemAdapter
+                        adapter.removeAt(viewHolder.adapterPosition)
+                        }
+
+                })
+                alertDialog.setNegativeButton("Cancel", object: DialogInterface.OnClickListener{
+                    override fun onClick(v: DialogInterface?, p1: Int) {
+                        val adapter = listOfItems?.adapter as ItemsListItemAdapter
+                        adapter.notifyDataSetChanged()
+                    }
+                })
+                alertDialog.create().show()
+
             }
         }
 

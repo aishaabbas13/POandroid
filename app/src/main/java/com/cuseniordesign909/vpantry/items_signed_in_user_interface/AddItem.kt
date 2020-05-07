@@ -83,7 +83,7 @@ class AddItem : DialogFragment(), DialogInterface.OnShowListener, View.OnClickLi
     override fun onDateChanged(view: DatePicker, year: Int, month: Int, dayOfMonth: Int) {
         var mon = month+1
         var date = "$dayOfMonth/$mon/$year"
-        Toast.makeText(context, "date = $date", Toast.LENGTH_LONG).show()
+        //Toast.makeText(context, "date = $date", Toast.LENGTH_LONG).show()
         var dateFormat = SimpleDateFormat("d/m/yyyy")
         var d = dateFormat.parse(date)
         expirationDate = d.time
