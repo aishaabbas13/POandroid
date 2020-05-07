@@ -6,10 +6,7 @@ import android.app.Dialog
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
-import android.widget.CalendarView
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.DialogFragment
 import com.cuseniordesign909.vpantry.ItemsSignedInActivity
 import com.cuseniordesign909.vpantry.R
@@ -23,7 +20,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 
-class AddItem : DialogFragment(), DialogInterface.OnShowListener, View.OnClickListener, CalendarView.OnDateChangeListener{
+class AddItem : DialogFragment(), DialogInterface.OnShowListener, View.OnClickListener, DatePicker.OnDateChangedListener{
     private var addItem : View? = null
     private var addItemName : EditText? = null
     private var addItemNameError : TextView? = null
@@ -31,7 +28,7 @@ class AddItem : DialogFragment(), DialogInterface.OnShowListener, View.OnClickLi
     private var addItemTypeError : TextView? = null
     private var addItemQuantity : EditText? = null
     private var addItemNote : EditText? = null
-    private var addItemExpirationDate : CalendarView? = null
+    private var addItemExpirationDate : DatePicker? = null
     private var pantryName : String? = null
     private var _id : String? = null
     private var expirationDate : Long = 0
@@ -71,11 +68,19 @@ class AddItem : DialogFragment(), DialogInterface.OnShowListener, View.OnClickLi
         addItemQuantity = addItem?.findViewById(R.id.addItemQuantity)
         addItemNote = addItem?.findViewById(R.id.addItemNote)
         addItemExpirationDate = addItem?.findViewById(R.id.addItemExpirationDate)
-        addItemExpirationDate?.setOnDateChangeListener(this)
-        expirationDate = addItemExpirationDate?.date as Long
+        addItemExpirationDate?.setOnDateChangedListener(this)
+        //expirationDate = addItemExpirationDate?. as Long
     }
 
-    override fun onSelectedDayChange(view: CalendarView, year: Int, month: Int, dayOfMonth: Int) {
+    /*override fun onSelectedDayChange(view: DatePicker, year: Int, month: Int, dayOfMonth: Int) {
+        var mon = month+1
+        var date = "$dayOfMonth/$mon/$year"
+        Toast.makeText(context, "date = $date", Toast.LENGTH_LONG).show()
+        var dateFormat = SimpleDateFormat("d/m/yyyy")
+        var d = dateFormat.parse(date)
+        expirationDate = d.time
+    }*/
+    override fun onDateChanged(view: DatePicker, year: Int, month: Int, dayOfMonth: Int) {
         var mon = month+1
         var date = "$dayOfMonth/$mon/$year"
         Toast.makeText(context, "date = $date", Toast.LENGTH_LONG).show()

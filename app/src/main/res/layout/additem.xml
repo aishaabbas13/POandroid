@@ -61,10 +61,16 @@
                 android:layout_height="wrap_content"
                 android:text="Expiration Date"
                 android:textColor="#000000" />
-            <CalendarView
+
+            <DatePicker
                 android:id="@+id/addItemExpirationDate"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:datePickerMode="calendar"
+                android:foregroundGravity="center"
+                android:headerBackground="@color/colorPrimary"
+                android:yearListSelectorColor="@color/colorPrimary" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
