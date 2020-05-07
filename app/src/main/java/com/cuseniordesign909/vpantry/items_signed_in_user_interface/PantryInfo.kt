@@ -62,8 +62,8 @@ class PantryInfo : Fragment(), View.OnClickListener {
             DividerItemDecorator(
                 ContextCompat.getDrawable(context as Context, R.drawable.divider) as Drawable
             )
-        pantryInfoAdmins?.adapter = EmailListAdapter(adminEmails, "", null)
-        pantryInfoUsers?.adapter = EmailListAdapter(userEmails, "", null)
+        pantryInfoAdmins?.adapter = EmailListAdapter(adminEmails, "", null, null)
+        pantryInfoUsers?.adapter = EmailListAdapter(userEmails, "", null, null)
         pantryInfoAdmins?.layoutManager = LinearLayoutManager(activity)
         pantryInfoUsers?.layoutManager = LinearLayoutManager(activity)
         pantryInfoUsers?.isNestedScrollingEnabled = false
@@ -92,20 +92,16 @@ class PantryInfo : Fragment(), View.OnClickListener {
         (activity as AppCompatActivity)?.supportActionBar?.title = "Pantry Info"
     }
     override fun onClick(view: View?) {
-        when(view?.id){
-            //Replace code so that it loads UpdatePantryInfo fragment instead
-            //TODO: implement UpdatePantryInfo fragment
-            /*R.id.pantryInfoEdit -> {
+        when(view?.id) {
+            R.id.pantryInfoEdit -> {
                 var b = Bundle()
-                b?.putBoolean("create", false)
-                b?.putString("name", pantry?.name)
-                b?.putStringArrayList("users", pantry?.users)
-                b?.putStringArrayList("administrators", pantry?.administrators)
                 b?.putString("_id", pantry?._id)
-                var editPantry = CreatePantry()
+                var editPantry = UpdatePantryInfo()
                 editPantry?.arguments = b
-                activity?.supportFragmentManager?.beginTransaction()?.add(R.id.signedInFragmentManager, editPantry, "Edit Pantry")?.addToBackStack("Edit Pantry")?.commit()
-            }*/
+                activity?.supportFragmentManager?.beginTransaction()
+                    ?.add(R.id.signedInFragmentManager, editPantry, "Edit Pantry")
+                    ?.addToBackStack("Edit Pantry")?.commit()
+            }
         }
     }
 
@@ -125,10 +121,10 @@ class PantryInfo : Fragment(), View.OnClickListener {
                     userEmails = ArrayList()
                     updateList(adminEmails, pantry?.administrators)
                     updateList(userEmails, pantry?.users)
-                    var adminAdapter = EmailListAdapter(adminEmails, null, null)
+                    var adminAdapter = EmailListAdapter(adminEmails, null, null, null)
                     pantryInfoAdmins?.adapter = adminAdapter
                     pantryInfoAdmins?.adapter?.notifyDataSetChanged()
-                    var userAdapter = EmailListAdapter(userEmails, null, null)
+                    var userAdapter = EmailListAdapter(userEmails, null, null, null)
                     pantryInfoUsers?.adapter = userAdapter
                     pantryInfoUsers?.adapter?.notifyDataSetChanged()
                 } else
