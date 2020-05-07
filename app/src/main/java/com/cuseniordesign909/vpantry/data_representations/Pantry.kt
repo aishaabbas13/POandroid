@@ -11,18 +11,18 @@ class Pantry(){
     var creationDate : Date? = null
     var admin : Boolean? = null
     var mode : Int? = null
-    var deleteUsers :ArrayList<String>? = null
+    var remove_user : String? = null
     constructor(_name : String, _admins : ArrayList<String>?, _users : ArrayList<String>?, id : String?):this(){
         _id = id
         name = _name
         administrators = _admins
         users = _users
     }
-    constructor(_name : String, _admins : ArrayList<String>?, _users : ArrayList<String>?, id : String?, _deleteUsers : ArrayList<String>) : this(){
+    constructor(_name : String, _admins : ArrayList<String>?, _users : ArrayList<String>?, id : String?, _deleteUsers : String?) : this(){
         _id = id
         name = _name
         administrators = _admins
         users = _users
-        deleteUsers = _deleteUsers
+        remove_user = _deleteUsers
     }
 }

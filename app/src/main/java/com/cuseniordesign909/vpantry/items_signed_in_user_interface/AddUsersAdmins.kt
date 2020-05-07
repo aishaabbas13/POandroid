@@ -68,8 +68,10 @@ class AddUsersAdmins : DialogFragment(), View.OnClickListener, DialogInterface.O
     }
 
     private fun initRecyclerViews(){
-        updatePantryAddAdminsList = updatePantryAddUA?.findViewById(R.id.createPantryAdmins)
-        updatePantryAddUsersList = updatePantryAddUA?.findViewById(R.id.createPantryUsers)
+        adminsList = ArrayList()
+        usersList = ArrayList()
+        updatePantryAddAdminsList = updatePantryAddUA?.findViewById(R.id.updatePantryAddAdminsList)
+        updatePantryAddUsersList = updatePantryAddUA?.findViewById(R.id.updatePantryAddUsersList)
         var dividerItemDecoration: RecyclerView.ItemDecoration =
             DividerItemDecorator(
                 ContextCompat.getDrawable(context as Context, R.drawable.divider) as Drawable
@@ -121,7 +123,6 @@ class AddUsersAdmins : DialogFragment(), View.OnClickListener, DialogInterface.O
                 addAdminDialog.arguments = b
                 addAdminDialog.setTargetFragment(this, GET_ADMIN)
                 addAdminDialog.show(fragmentManager as FragmentManager, "Add Administrator")
-
             }
             R.id.updatePantryAddUser -> {
                 var b = Bundle()
@@ -196,18 +197,18 @@ class AddUsersAdmins : DialogFragment(), View.OnClickListener, DialogInterface.O
                 usersList?.add(EmailListData(data?.getStringExtra("email") as String, ""))
                 updatePantryAddAdminsList?.adapter?.notifyItemInserted(usersList?.size as Int - 1)
                 if(usersList?.size as Int > 1)
-                    updatePantryAddAdminsList?.adapter?.notifyItemChanged(usersList?.size as Int - 1)
+                    updatePantryAddUsersList?.adapter?.notifyItemChanged(usersList?.size as Int - 1)
             }
             GET_ADMIN -> {
-                usersList?.add(EmailListData(data?.getStringExtra("email") as String, ""))
-                updatePantryAddAdminsList?.adapter?.notifyItemInserted(usersList?.size as Int -1)
+                adminsList?.add(EmailListData(data?.getStringExtra("email") as String, ""))
+                updatePantryAddAdminsList?.adapter?.notifyItemInserted(adminsList?.size as Int -1)
             }
             EDIT_USER -> {
                 usersList?.get(index)?.email = data?.getStringExtra("email")
-                updatePantryAddAdminsList?.adapter?.notifyItemChanged(index)
+                updatePantryAddUsersList?.adapter?.notifyItemChanged(index)
             }
             EDIT_ADMIN -> {
-                usersList?.get(index)?.email = data?.getStringExtra("email")
+                adminsList?.get(index)?.email = data?.getStringExtra("email")
                 updatePantryAddAdminsList?.adapter?.notifyItemChanged(index)
             }
         }

@@ -10,9 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cuseniordesign909.vpantry.R
 import com.cuseniordesign909.vpantry.data_representations.EmailListData
 import com.cuseniordesign909.vpantry.items_signed_in_user_interface.AddUsersAdmins
+import com.cuseniordesign909.vpantry.items_signed_in_user_interface.UpdatePantryInfo
 import kotlinx.android.synthetic.main.emailitem.view.*
 
-class EmailListAdapter(private var emails : ArrayList<EmailListData>?, _mode : String?, _fragment : CreatePantry?, _fragment2:AddUsersAdmins?) : RecyclerView.Adapter<EmailListAdapter.EmailHolder>(){
+class EmailListAdapter(var emails : ArrayList<EmailListData>?, _mode : String?, _fragment : CreatePantry?, _fragment2:AddUsersAdmins?) : RecyclerView.Adapter<EmailListAdapter.EmailHolder>(){
     var mode = _mode
     var fragment = _fragment
     var fragment2 = _fragment2

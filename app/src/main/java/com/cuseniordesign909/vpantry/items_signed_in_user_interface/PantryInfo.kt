@@ -96,6 +96,8 @@ class PantryInfo : Fragment(), View.OnClickListener {
             R.id.pantryInfoEdit -> {
                 var b = Bundle()
                 b?.putString("_id", pantry?._id)
+                b?.putStringArrayList("users", arguments?.getStringArrayList("users"))
+                b?.putStringArrayList("administrators", arguments?.getStringArrayList("administrators"))
                 var editPantry = UpdatePantryInfo()
                 editPantry?.arguments = b
                 activity?.supportFragmentManager?.beginTransaction()

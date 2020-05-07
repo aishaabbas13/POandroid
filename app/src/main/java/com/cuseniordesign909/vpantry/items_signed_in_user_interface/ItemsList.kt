@@ -118,6 +118,8 @@ class ItemsList : Fragment(){
                 var pantryInfo = PantryInfo()
                 b.putString("_id", _id)
                 b.putBoolean("admin", admin as Boolean)
+                b.putStringArrayList("administrators", arguments?.getStringArrayList("administrators"))
+                b.putStringArrayList("users", arguments?.getStringArrayList("users"))
                 pantryInfo.arguments = b
                 activity?.supportFragmentManager?.beginTransaction()?.add(R.id.signedInFragmentManager, pantryInfo, "PantryInfo")?.addToBackStack("PantryInfo")?.commit()
                 true

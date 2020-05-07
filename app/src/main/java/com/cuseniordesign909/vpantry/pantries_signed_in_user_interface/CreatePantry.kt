@@ -93,6 +93,7 @@ class CreatePantry : Fragment(), View.OnClickListener {
         val swipeHandler1 = object : SwipeToDeleteCallback(activity?.applicationContext as Context) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val adapter = createPantryAdmins?.adapter as EmailListAdapter
+
                 adapter.removeAt(viewHolder.adapterPosition)
             }
         }
@@ -125,7 +126,6 @@ class CreatePantry : Fragment(), View.OnClickListener {
             menu?.findItem(R.id.app_bar_create_pantry).isVisible = false
             menu?.findItem(R.id.app_bar_sign_out).isVisible = false
             menu?.findItem(R.id.app_bar_user_info).isVisible = false
-            menu?.findItem(R.id.delete_all_data).isVisible = false
         } else {
             menu?.findItem(R.id.app_bar_pantry_info).isVisible = false
             menu?.findItem(R.id.app_bar_add_item).isVisible = false

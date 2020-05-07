@@ -67,7 +67,6 @@ class DeleteDataOnServer : Fragment(), View.OnClickListener{
         menu?.findItem(R.id.app_bar_create_pantry).isVisible = false
         menu?.findItem(R.id.app_bar_sign_out).isVisible = false
         menu?.findItem(R.id.app_bar_user_info).isVisible = false
-        menu?.findItem(R.id.delete_all_data).isVisible = false
     }
     private fun connect(route : Int){
         var api = PantriesSignedInActivity.retrofit?.create(NetworkConnection::class.java)

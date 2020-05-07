@@ -28,7 +28,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class UpdateUserInfo : Fragment(), View.OnClickListener {
-
     private var userInfo : View? = null
     private var updateEmailError : TextView? = null
     private var updateFirstNameError : TextView? = null
@@ -64,7 +63,6 @@ class UpdateUserInfo : Fragment(), View.OnClickListener {
         menu?.findItem(R.id.app_bar_create_pantry).isVisible = false
         menu?.findItem(R.id.app_bar_sign_out).isVisible = false
         menu?.findItem(R.id.app_bar_user_info).isVisible = false
-        menu?.findItem(R.id.delete_all_data).isVisible = false
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
